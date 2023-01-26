@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "IBM Plex Sans Thai";
+    font-style: normal;
+    font-weight: normal;
+    src: local(""),
+      url("assets/fonts/ibm-plex-sans-thai-regular.woff2") format("woff2"),
+      url("assets/fonts/ibm-plex-sans-thai-regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "IBM Plex Sans Thai";
+    font-style: normal;
+    font-weight: bold;
+    src: local(""),
+      url("assets/fonts/ibm-plex-sans-thai-bold.woff2") format("woff2"),
+      url("assets/fonts/ibm-plex-sans-thai-bold.woff") format("woff");
+  }
+}
+
+* {
+  font-family: "IBM Plex Sans Thai", system-ui, sans-serif !important;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  background-color: #f5f5f5;
+  color: #0c0c0c;
+}
+
+.layout-bg {
+  background: url("assets/images/bg-clouds.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 1.75;
+  min-height: 100vh;
+
+  overflow-wrap: break-word;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+h2 {
+  font-size: 2.441rem;
+}
+h3 {
+  font-size: 1.953rem;
+}
+h4 {
+  font-size: 1.563rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+small,
+.text_small {
+  font-size: 0.8rem;
+}

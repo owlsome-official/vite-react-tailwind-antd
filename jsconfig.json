@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "esnext"
+    ],
+    "baseUrl": ".",
+    "jsx": "react",
+    "paths": {
+      "apis/*": [
+        "./src/apis/*"
+      ],
+      "assets/*": [
+        "./src/assets/*"
+      ],
+      "components/*": [
+        "./src/components/*"
+      ],
+      "layouts/*": [
+        "./src/layouts/*"
+      ],
+      "pages/*": [
+        "./src/pages/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ]
+    }
+  },
+  "exclude": [
+    "./node_modules/**/"
+  ]
+}
