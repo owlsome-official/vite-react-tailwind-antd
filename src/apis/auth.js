@@ -1,8 +1,8 @@
-
 import Axios, { HttpStatusCode } from "utils/axios.service";
 import {
   API_SIGN_IN,
-  API_SIGN_OUT, SERVER_INTERNAL_ERROR_TEXT
+  API_SIGN_OUT,
+  SERVER_INTERNAL_ERROR_TEXT,
 } from "utils/constants";
 
 // Usage: const [ redirectUrl, errMsg ] = SignIn("username", "password")
@@ -19,7 +19,7 @@ const SignIn = async (username = "", password = "") => {
       { cancelToken: source.token }
     );
     const { token } = response.data.response_data;
-    console.log(token)
+    console.log(token);
 
     return [token, ""];
   } catch (error) {

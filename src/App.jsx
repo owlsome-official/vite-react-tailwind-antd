@@ -6,7 +6,7 @@ import NotFoundPage from "pages/NotFoundPage";
 import { ABOUT_PATH, AUTH_PATH } from "utils/constants";
 
 import AuthPage from "pages/AuthPage";
-import './App.css';
+import "./App.css";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
       <Route path={AUTH_PATH} element={<AuthPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
-  )
-}
+  );
+};
 
-export default App
+export default App;

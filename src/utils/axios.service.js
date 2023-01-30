@@ -6,7 +6,7 @@ import {
   AUTH_PATH,
   EXPIRED_TOKEN_TEXT,
   // STORAGE_KEY_TOKEN,
-  UNPROTECTED_PATHS
+  UNPROTECTED_PATHS,
 } from "utils/constants";
 
 const redirectToAuth = () => {
