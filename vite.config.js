@@ -30,4 +30,10 @@ export default defineConfig({
     },
     // port: 3000,
   },
+  test: {
+    css: false,
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/utils/test/setup.js",
+  },
 });

@@ -32,17 +32,9 @@
 
 body {
   margin: 0;
-  width: 100vw;
+  width: 100%;
   background-color: #f5f5f5;
   color: #0c0c0c;
-}
-
-.layout-bg {
-  background: url("assets/images/bg-clouds.png") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 :root {

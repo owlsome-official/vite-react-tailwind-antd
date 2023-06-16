@@ -1,15 +1,15 @@
-import { render } from "@testing-library/react";
+import { render } from "utils/test/utils";
 import { withSearchParams } from "./withSearchParams";
 
-jest.mock("react-router-dom", () => {
+vi.mock("react-router-dom", () => {
   return {
-    useSearchParams: () => [String(), jest.fn()],
+    useSearchParams: () => [String(), vi.fn()],
   };
 });
 
 describe("Test withSearchParams", () => {
   test("should be wrap-able", () => {
-    const mockComponent = jest.fn(() => null);
+    const mockComponent = vi.fn(() => null);
     const ComponentWrapped = withSearchParams(mockComponent);
 
     render(<ComponentWrapped />);

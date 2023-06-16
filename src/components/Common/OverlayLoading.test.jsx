@@ -1,7 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "utils/test/utils";
+import { describe, expect, test } from "vitest";
 import OverlayLoading, { randomIntFunc } from "./OverlayLoading";
 
-describe("Test OverlayLoading.js", () => {
+describe.concurrent("Test OverlayLoading.js", () => {
   const windowCryptoOriginal = window.crypto;
 
   beforeEach(() => {
@@ -40,7 +41,7 @@ describe("Test OverlayLoading.js", () => {
   });
 
   test("should be visible via window.crypto.getRandomValues", () => {
-    const mockGetRandomValues = jest.fn();
+    const mockGetRandomValues = vi.fn();
     Object.defineProperty(window, "crypto", {
       configurable: true,
       writable: true,

@@ -6,12 +6,13 @@ REPLACE_WITH_YOUR_PROJECT_NAME is ...
 
 ## 📝 Table of Contents
 
-- [REPLACE_WITH_YOUR_PROJECT_NAME](#REPLACE_WITH_YOUR_PROJECT_NAME)
+- [REPLACE\_WITH\_YOUR\_PROJECT\_NAME](#replace_with_your_project_name)
   - [📘 About](#-about)
   - [📝 Table of Contents](#-table-of-contents)
   - [📦 Built With](#-built-with)
   - [⚒ Structure](#-structure)
   - [📋 Features](#-features)
+  - [📄 Documents](#-documents)
   - [📝 Versions](#-versions)
     - [v0.1.0 - `YYYY-MM-DD`](#v010---yyyy-mm-dd)
     - [Version History](#version-history)
@@ -20,7 +21,7 @@ REPLACE_WITH_YOUR_PROJECT_NAME is ...
 ## 📦 Built With
 
 - [x] React 18
-- [x] Vite
+- [x] Vite with Vitest
 - [x] TailwindCSS (Class name tools)
 - [x] Ant Design v5 (Styled Component)
 - [x] Containerized with Docker (`nginx-alpine` image)
@@ -37,6 +38,13 @@ REPLACE_WITH_YOUR_PROJECT_NAME is ...
 ## 📋 Features
 
 - `/` Home Page
+- `/auth` Authentication Page
+- `/about` About Page
+- `/not_found` General 404 Page
+
+## 📄 Documents
+
+[./docs/README.md](./docs/README.md)
 
 ## 📝 Versions
 
@@ -50,7 +58,7 @@ REPLACE_WITH_YOUR_PROJECT_NAME is ...
 
 ## ⚙ Get Started
 
-1. Initialized (don't forget to rename `my-project`)
+1. Initialized
 
     ```bash
     git clone REPLACE_WITH_YOUR_APP_GIT_LINK
@@ -62,13 +70,15 @@ REPLACE_WITH_YOUR_PROJECT_NAME is ...
     cd REPLACE_WITH_YOUR_PROJECT_NAME
     ```
 
-3. Set up environment by command
+3. Create new `.env.local` with contents from [FAQ](https://g.i.t/group/project/-/wikis/FAQ)
+
+4. Set up environment by command
 
     ```bash
     yarn
     ```
 
-4. Run project by command
+5. Run project by command
 
     ```bash
     # Start dev server

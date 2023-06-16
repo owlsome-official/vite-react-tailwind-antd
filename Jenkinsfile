@@ -1,73 +1,185 @@
 pipeline {
-  agent any
-  tools { nodejs 'node' }
-  environment {
-    DOCKER_REGISTRY = 'REPLACE_WITH_YOUR_DOCKER_REGISTRY'
-    GROUP_NAME = 'REPLACE_WITH_YOUR_GROUP_NAME'
-    PROJECT_NAME = 'REPLACE_WITH_YOUR_PROJECT_NAME'
-  }
-  stages {
-    stage('Sonarqube Scanner') {
-      environment {
+    agent any
+
+    tools {
+        nodejs 'node-18'
+    }
+
+    environment {
         scannerHome = tool 'SonarQubeScanner'
-      }
-      steps {
-        withSonarQubeEnv('sonarqube') {
-          sh "echo ${scannerHome}"
-          sh "${scannerHome}/bin/sonar-scanner -X"
+        // NOTE: keep it 'production' for minimizing app size & to be the most like the production.
+        NODE_ENV = 'production'
+        TARGET_ENV = 'sit'
+        TARGET_ENV_DEFAULT = 'sit'
+
+        HELM_EXPERIMENTAL_OCI = 1
+    }
+
+    stages {
+        stage('Step 1: Select target ENV') {
+            steps {
+                script {
+                    try {
+                        timeout(time: 1, unit: 'MINUTES') {
+                            TARGET_ENV = input(
+                                id: 'select-target-env',
+                                message: 'Please select target ENV',
+                                ok: 'Choose',
+                                parameters: [
+                                    choice(
+                                        name: 'ENV',
+                                        description: 'Select target env from dropdown list',
+                                        choices: ['sit', 'uat', 'pvt' ,'production']
+                                    )
+                                ]
+                            )
+                            echo "Selected: ${TARGET_ENV}"
+                        }
+                    } catch (err) {
+                        def user = err.getCauses()[0].getUser()
+                        if ('SYSTEM' == user.toString()) { // SYSTEM means timeout
+                            echo('Input timeout expired, default value will be used: ' + TARGET_ENV_DEFAULT)
+                            TARGET_ENV = TARGET_ENV_DEFAULT
+                        } else {
+                            echo "Input aborted by: [${user}]"
+                            error("Pipeline aborted by: [${user}]")
+                        }
+                    }
+                }
+            }
         }
-      }
-    }
 
-    stage('Preparing & Build for UAT') {
-      steps {
-        script {
-          withEnv(["PATH+NODE=${env.WORKSPACE}/node/bin"]) {
-            sh 'npm install -g yarn'
-            sh 'yarn'
-            sh 'yarn build'
-          }
+        stage('Step 2: Prepare') {
+            steps {
+                prepare_stage(TARGET_ENV)
+            }
         }
-      }
-    }
 
-    stage('Read package.json Configuration') {
-      steps {
-        script {
-          def props = readJSON file: "/var/jenkins_home/workspace/${PROJECT_NAME}/package.json"
-          env.version = props.version
-          sh "echo ${env.version}"
+        stage('Step 3: Unit test') {
+            steps {
+                test_stage()
+            }
         }
-      }
+
+        stage('Step 4: Do skip SonarQube Scanner?') {
+            steps {
+                script {
+                    boolean isSkip = false
+                    try {
+                        timeout(time: 30, unit: 'SECONDS') {
+                            isSkip = input(
+                                id: 'skipSonar',
+                                message: 'Do skip SonarQube Scanner?',
+                                ok: 'No skip',
+                                parameters: [
+                                    booleanParam(
+                                        name: 'skip',
+                                        description: 'Check for skipping this step',
+                                        defaultValue: false
+                                    )
+                                ]
+                            )
+                        }
+                    } catch (err) {
+                        def user = err.getCauses()[0].getUser()
+                        if ('SYSTEM' == user.toString()) { // SYSTEM means timeout
+                            echo('Input timeout expired, default value will be used: not skipped')
+                        } else {
+                            echo "Input aborted by: [${user}]"
+                            error("Pipeline aborted by: [${user}]")
+                        }
+                    }
+
+                    echo "isSkip: ${isSkip}"
+                    if (isSkip) {
+                        echo 'SonarQube Scanner Skipped'
+                    } else {
+                        sonarqube_stage()
+                    }
+                }
+            }
+        }
+
+        stage('Step 5: Build artifact') {
+            steps {
+                make_artifact_stage()
+            }
+        }
+
+        stage('Step 6: Deployment') {
+            agent {
+                docker {
+                    image 'i.m.a.g.e/k8s/k8s-push:0.1.0'
+                }
+            }
+            steps {
+                deploy_stage()
+            }
+        }
+    }
+}
+
+def prepare_stage(targetEnv) {
+    echo 'Preparing...'
+    // Setup & Prepare ENV & Build APP
+    def props = readJSON file: 'package.json'
+    echo "App Version: ${props.version}"
+
+    def projectID = "0"
+    def snippetID = "0"
+    def envLocate = "https://g.i.t/api/v4/projects/${projectID}/snippets/${snippetID}/files/main/.env.${targetEnv}/raw"
+    withCredentials([string(credentialsId: '1212312121', variable: 'TOKEN')]) {
+        sh "curl --header 'PRIVATE-TOKEN: ${TOKEN}' ${envLocate} -o .env.local"
+    }
+    readProperties(file: '.env.local').each { key, value -> env[key] = value }
+
+    env['ENV'] = "${targetEnv}"
+    env['TAG'] = "${props.version}"
+    echo 'Prepare completed'
+}
+
+def test_stage() {
+    echo 'Testing...'
+    sh 'NODE_ENV=development yarn install'
+    // sh "yarn test:ci"
+    // withEnv(["PATH+NODE=${env.WORKSPACE}/node/bin"]) {
+    //     sh 'make test-coverage'
+    // }
+    echo 'Test completed'
+}
+
+def sonarqube_stage() {
+    echo 'Code scanning...'
+    // withSonarQubeEnv('sonarqube') {
+    //     sh "echo ${scannerHome}"
+    //     sh "${scannerHome}/bin/sonar-scanner -X"
+    // }
+    echo 'Scanned'
+}
+
+def make_artifact_stage() {
+    echo "build...${ENV} with v${TAG}"
+
+    echo "Using NODE_ENV=${NODE_ENV}"
+    sh 'yarn build'
+
+    // Build docker image
+    sh 'chmod 777 Dockerfile'
+    sh "docker build . -t ${DOCKER_REGISTRY}/${WORKSPACE_NAME}/${APP_NAME}-${ENV}:${TAG}"
+
+    sh "docker login ${DOCKER_REGISTRY} -u ${DOCKER_USER} -p ${DOCKER_PW}"
+    sh "docker push ${DOCKER_REGISTRY}/${WORKSPACE_NAME}/${APP_NAME}-${ENV}:${TAG}"
+
+    echo 'Artifacts are ready'
+}
+
+def deploy_stage() {
+    echo "deploying...${ENV} with v${TAG}"
+
+    if ("${ENV}" == 'production' || "${ENV}" == 'pvt') {
+        echo 'Production deployment will be skipped.'
+        return
     }
 
-    stage('Build ENV docker-compose') {
-      steps {
-        sh "echo 'TAG=${env.version}'>>.env"
-        sh 'chmod 777 Dockerfile'
-      }
-    }
-
-    stage('Build Docker Image for UAT') {
-      steps {
-        sh "docker build -t ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${env.version} -f Dockerfile ."
-      }
-    }
-
-    stage('Assign docker tag & push to docker registry') {
-      steps {
-        sh "docker login ${DOCKER_REGISTRY} -u ${DOCKER_REGISTRY_USERNAME} -p ${DOCKER_REGISTRY_PASSWORD}"
-        sh "docker push ${DOCKER_REGISTRY}/${GROUP_NAME}/${PROJECT_NAME}:${env.version}"
-        sh "docker logout ${DOCKER_REGISTRY}"
-      }
-    }
-
-    stage('Run docker-compose') {
-      steps {
-        // sh "docker-compose stop ${PROJECT_NAME}"
-        // sh "docker-compose rm -f ${PROJECT_NAME}"
-        sh "docker-compose up -d ${PROJECT_NAME}"
-      }
-    }
-  }
+    echo 'Deployment completed'
 }

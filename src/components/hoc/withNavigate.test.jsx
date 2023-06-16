@@ -1,11 +1,11 @@
-import { render } from "@testing-library/react";
+import { render } from "utils/test/utils";
 import { withNavigate } from "./withNavigate";
 
-jest.mock("react-router-dom");
+vi.mock("react-router-dom");
 
 describe("Test withNavigate", () => {
   test("should be wrap-able", () => {
-    const mockComponent = jest.fn(() => null);
+    const mockComponent = vi.fn(() => null);
     const ComponentWrapped = withNavigate(mockComponent);
 
     render(<ComponentWrapped />);

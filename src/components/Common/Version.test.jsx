@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import Version from "../Version";
+import { render, screen } from "utils/test/utils";
+import Version from "./Version";
 
 describe("Test Version.js", () => {
   test('should render "v" and following some semantic version number', () => {

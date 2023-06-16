@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // import AuthService from "apis/auth";
-// import { UtilsStorage } from "utils";
+// import { UtilsStorage } from "utils/storage";
 import {
   AUTH_PATH,
   EXPIRED_TOKEN_TEXT,

@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 
 import AboutPage from "pages/AboutPage";
+import AuthPage from "pages/AuthPage";
 import HomePage from "pages/HomePage";
 import NotFoundPage from "pages/NotFoundPage";
 import { ABOUT_PATH, AUTH_PATH } from "utils/constants";
 
-import AuthPage from "pages/AuthPage";
 import "./App.css";
 
 const App = () => {

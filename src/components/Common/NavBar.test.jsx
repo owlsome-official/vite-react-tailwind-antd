@@ -1,7 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "utils/test/utils";
+import { describe, expect, test } from "vitest";
 import NavBar from "./NavBar";
 
-describe("Test NavBar", () => {
+describe.concurrent("Test NavBar", () => {
   test("should be visible", () => {
     render(<NavBar />);
     const navbarContainer = screen.getByTestId("navbarContainer");
