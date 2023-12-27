@@ -11,9 +11,8 @@ The Vite template with react plugin and tools for scaffolding your project
   - [📝 Table of Contents](#-table-of-contents)
   - [📦 Template contains](#-template-contains)
   - [📝 Versions (Last 2 Minor Version)](#-versions-last-2-minor-version)
+    - [v0.4.0 - `2023-12-26`](#v040---2023-12-26)
     - [v0.3.0 - `2023-06-16`](#v030---2023-06-16)
-    - [v0.2.1 - `2023-05-22`](#v021---2023-05-22)
-    - [v0.2.0 - `2023-01-30`](#v020---2023-01-30)
     - [Version History](#version-history)
   - [📌 Get Started](#-get-started)
     - [Want some more ?](#want-some-more-)
@@ -29,21 +28,19 @@ The Vite template with react plugin and tools for scaffolding your project
 
 ## 📝 Versions (Last 2 Minor Version)
 
+### v0.4.0 - `2023-12-26`
+
+- Updated [Pantone Color of the year 2024](https://www.pantone.com/color-of-the-year/2024)
+- Updated dependencies
+- Update free content `storage.js`, a closure utility, access web storage api or cookie with a single command
+- Update free content `sonar-project.properties` for supporting SonarQube after initialized
+- Code Refactored
+
 ### v0.3.0 - `2023-06-16`
 
 - Added vitest for testing tool
 - Updated "All-in-one" files and structures
 - Updated dependencies
-
-### v0.2.1 - `2023-05-22`
-
-- Updated dependencies
-
-### v0.2.0 - `2023-01-30`
-
-- Added `prettier`, and `prettier-plugin-tailwindcss`
-- Re-formatted all files
-- Added some necessary files for yarn v3
 
 ### Version History
 

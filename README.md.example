@@ -22,8 +22,8 @@ REPLACE_WITH_YOUR_PROJECT_NAME is ...
 
 - [x] React 18
 - [x] Vite with Vitest
-- [x] TailwindCSS (Class name tools)
-- [x] Ant Design v5 (Styled Component)
+- [x] TailwindCSS
+- [x] Ant Design v5
 - [x] Containerized with Docker (`nginx-alpine` image)
 - [x] CI/CD supported (`Jenkins` & `SonarQube`)
 
@@ -70,7 +70,7 @@ REPLACE_WITH_YOUR_PROJECT_NAME is ...
     cd REPLACE_WITH_YOUR_PROJECT_NAME
     ```
 
-3. Create new `.env.local` with contents from [FAQ](https://g.i.t/group/project/-/wikis/FAQ)
+3. (Optional) Rename `.env.local.example` to `.env.local` with contents from Wiki / Snippet
 
 4. Set up environment by command
 

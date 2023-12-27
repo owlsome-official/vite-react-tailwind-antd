@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import AfterInstallation from "components/AfterInstallation";
-import OverlayLoading from "components/Common/OverlayLoading";
+import OverlayLoadingCustom from "components/Common/OverlayLoadingCustom";
 import MainLayout from "layouts/MainLayout";
 import { useCallback, useState } from "react";
 
@@ -31,7 +31,7 @@ const TestLoading = () => {
       <Button type="primary" onClick={handleClick}>
         Test Loading for 5 seconds
       </Button>
-      {loading && <OverlayLoading active={true} />}
+      {loading && <OverlayLoadingCustom active={true} />}
     </div>
   );
 };

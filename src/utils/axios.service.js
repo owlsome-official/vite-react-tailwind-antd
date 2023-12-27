@@ -10,7 +10,7 @@ import {
 } from "utils/constants";
 
 const redirectToAuth = () => {
-  console.log("Session is expired, redirect to login");
+  console.log("Session expired, redirect to login");
   const { alert, location } = window;
   alert && alert("เซสชั่นหมดอายุ กำลังพาท่านไปหน้าล็อกอิน");
   location.replace(AUTH_PATH);
@@ -37,9 +37,10 @@ axios.interceptors.request.use(
     }
     // let token = UtilsStorage.Cookies.get(STORAGE_KEY_TOKEN);
     // if (token) {
-    //   config.headers["Authorization"] = `Bearer ${token}`;
+    //   config.headers["Authorization"] =
+    //     config.headers["Authorization"] || `Bearer ${token}`;
     // } else {
-    //   throw Error(EXPIRED_TOKEN_MSG);
+    //   throw Error(EXPIRED_TOKEN_TEXT);
     // }
     return config;
   },

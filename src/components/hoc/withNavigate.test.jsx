@@ -10,9 +10,22 @@ describe("Test withNavigate", () => {
 
     render(<ComponentWrapped />);
 
-    expect(mockComponent).toBeCalled();
-    expect(mockComponent).toBeCalledWith(
+    expect(mockComponent).toHaveBeenCalled();
+    expect(mockComponent).toHaveBeenCalledWith(
       { navigate: undefined }, // cause mock router
+      expect.anything()
+    );
+  });
+  test("should be found props passed", () => {
+    const mockComponent = vi.fn(() => null);
+    const ComponentWrapped = withNavigate(mockComponent);
+
+    const dummyPropsValue = "mock";
+    render(<ComponentWrapped dummyProps={dummyPropsValue} />);
+
+    expect(mockComponent).toHaveBeenCalled();
+    expect(mockComponent).toHaveBeenCalledWith(
+      { navigate: undefined, dummyProps: dummyPropsValue }, // cause mock router
       expect.anything()
     );
   });

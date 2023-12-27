@@ -15,24 +15,29 @@ const NavBar = ({ fullSize }) => {
   return (
     <Header
       data-testid="navbarContainer"
-      className="fixed flex z-10 w-full"
+      className="fixed z-10 flex w-full drop-shadow-md"
       style={{
         backgroundColor: colorPrimary,
         paddingInline: 0,
       }}
     >
-      <div className="h-full pl-[5%] flex items-center gap-4 w-full">
+      <div className="flex h-full w-full items-center gap-4 pl-[5%]">
         <a href="/">
-          <div data-testid="navbarLogo" className="w-48 h-12 bg-white text-center">LOGO</div>
+          <div
+            data-testid="navbarLogo"
+            className="h-12 w-48 bg-white text-center"
+          >
+            LOGO
+          </div>
         </a>
         <div
           data-testid="navbarTitle"
           className={fullSize ? styles.navbarTitleFullSize : styles.navbarTitle}
         >
-          <div className="leading-8 font-bold text-[2.9vw] sm:text-h5">
+          <div className="text-[2.9vw] font-bold leading-8 sm:text-h5">
             {import.meta.env.VITE_PROJECT_NAME}
           </div>
-          <div className="leading-3 font-bold text-[2vw] sm:text-small uppercase pb-1">
+          <div className="pb-1 text-[2vw] font-bold uppercase leading-3 sm:text-small">
             {import.meta.env.VITE_PROJECT_DESCRIPTION}
           </div>
         </div>

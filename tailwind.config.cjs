@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      // colors: {
+      //   primary: "#257E34",
+      // },
+    },
     fontSize: {
       h1: "3.052rem",
       h2: "2.441rem",
