@@ -2,6 +2,11 @@
 
 ## Version History
 
+### [v0.4.1] - `2024-02-21`
+
+- Fixed fail tests
+- Updated dependencies
+
 ### [v0.4.0] - `2023-12-26`
 
 - Updated [Pantone Color of the year 2024](https://www.pantone.com/color-of-the-year/2024)
@@ -30,6 +35,7 @@
 
 - First time ever, it contains a lot of dir/files but it was needed.
 
+[v0.4.1]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.4.1
 [v0.4.0]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.4.0
 [v0.3.0]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.3.0
 [v0.2.1]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.2.1

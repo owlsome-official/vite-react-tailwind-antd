@@ -2,7 +2,7 @@ import { render, screen } from "utils/test/utils";
 import { describe, expect, test } from "vitest";
 import NavBar from "./NavBar";
 
-describe.concurrent("Test NavBar", () => {
+describe("Test NavBar", () => {
   test("should be visible", () => {
     render(<NavBar />);
     const navbarContainer = screen.getByTestId("navbarContainer");

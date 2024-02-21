@@ -2,7 +2,7 @@ import OverlayLoadingCustom from "components/Common/OverlayLoadingCustom";
 import { render, screen } from "utils/test/utils";
 import { describe, expect, test } from "vitest";
 
-describe.concurrent("Test OverlayLoadingCustom.jsx", () => {
+describe("Test OverlayLoadingCustom.jsx", () => {
   test("should not be visible when not have any attr", () => {
     const view = render(<OverlayLoadingCustom />);
     expect(view.container).toHaveTextContent("รอสักครู่");
