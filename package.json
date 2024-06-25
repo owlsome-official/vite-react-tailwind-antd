@@ -1,7 +1,7 @@
 {
   "name": "buildingwatsize.vite-react-tailwind-antd",
   "private": true,
-  "version": "0.4.3",
+  "version": "0.4.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,31 +11,31 @@
     "test:ci": "vitest run --coverage"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.3.6",
-    "antd": "^5.16.2",
+    "@ant-design/icons": "^5.3.7",
+    "antd": "^5.18.3",
     "autoprefixer": "^10.4.19",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "js-base64": "^3.7.7",
     "postcss": "^8.4.38",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-loading-randomizable": "^1.0.0",
-    "react-router-dom": "^6.22.3",
-    "tailwindcss": "^3.4.3",
-    "vitest": "^1.5.0"
+    "react-router-dom": "^6.24.0",
+    "tailwindcss": "^3.4.4",
+    "vitest": "^1.6.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^15.0.2",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
-    "@vitejs/plugin-react": "^4.0.0",
-    "@vitest/coverage-v8": "^1.5.0",
-    "jsdom": "^24.0.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.14",
-    "vite": "^5.2.10"
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^1.6.0",
+    "jsdom": "^24.1.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "vite": "^5.3.1"
   }
 }
