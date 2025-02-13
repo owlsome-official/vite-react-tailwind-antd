@@ -2,7 +2,7 @@ import { render } from "utils/test/utils";
 import { describe, test, vi } from "vitest";
 import { withLocation } from "./withLocation";
 
-vi.mock("react-router-dom");
+vi.mock("react-router");
 
 describe.concurrent("Test withLocation", () => {
   test("should be wrap-able", () => {
@@ -14,7 +14,7 @@ describe.concurrent("Test withLocation", () => {
     expect(mockComponent).toHaveBeenCalled();
     expect(mockComponent).toHaveBeenCalledWith(
       { location: undefined }, // cause mock router
-      expect.anything()
+      expect.anything(),
     );
   });
   test("should be found props passed", () => {
@@ -27,7 +27,7 @@ describe.concurrent("Test withLocation", () => {
     expect(mockComponent).toHaveBeenCalled();
     expect(mockComponent).toHaveBeenCalledWith(
       { location: undefined, dummyProps: dummyPropsValue }, // cause mock router
-      expect.anything()
+      expect.anything(),
     );
   });
 });

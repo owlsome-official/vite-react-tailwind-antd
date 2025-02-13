@@ -1,8 +1,8 @@
 import { Button } from "antd";
 import AfterInstallation from "components/AfterInstallation";
-import OverlayLoadingCustom from "components/Common/OverlayLoadingCustom";
 import MainLayout from "layouts/MainLayout";
 import { useCallback, useState } from "react";
+import { OverlayLoading } from "react-loading-randomizable";
 
 const HomePage = () => {
   return (
@@ -31,7 +31,7 @@ const TestLoading = () => {
       <Button type="primary" onClick={handleClick}>
         Test Loading for 5 seconds
       </Button>
-      {loading && <OverlayLoadingCustom active={true} />}
+      {loading && <OverlayLoading active={true} />}
     </div>
   );
 };

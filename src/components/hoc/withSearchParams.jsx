@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 
 export function withSearchParams(Component) {
   return (props) => {

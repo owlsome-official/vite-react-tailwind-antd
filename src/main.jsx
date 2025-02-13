@@ -1,8 +1,9 @@
+import "@ant-design/v5-patch-for-react-19";
 import { ConfigProvider, Watermark } from "antd";
 import thTH from "antd/locale/th_TH";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router";
 
 import App from "./App";
 import "./index.css";
@@ -32,5 +33,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         )}
       </ConfigProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

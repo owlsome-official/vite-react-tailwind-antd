@@ -1,6 +1,6 @@
 import PlainCenterLayout from "layouts/PlainCenterLayout";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();

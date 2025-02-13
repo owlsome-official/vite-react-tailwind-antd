@@ -1,5 +1,5 @@
 import PlainCenterLayout from "layouts/PlainCenterLayout";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 const AboutPage = () => {
   const navigate = useNavigate();

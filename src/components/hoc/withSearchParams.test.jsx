@@ -2,10 +2,8 @@ import { render } from "utils/test/utils";
 import { describe, test } from "vitest";
 import { withSearchParams } from "./withSearchParams";
 
-vi.mock("react-router-dom", () => {
-  return {
-    useSearchParams: () => [String(), vi.fn()],
-  };
+vi.mock("react-router", () => {
+  return { useSearchParams: () => [String(), vi.fn()] };
 });
 
 describe.concurrent("Test withSearchParams", () => {
@@ -21,7 +19,7 @@ describe.concurrent("Test withSearchParams", () => {
         searchParams: expect.any(String),
         setSearchParams: expect.any(Function),
       },
-      expect.anything()
+      expect.anything(),
     );
   });
   test("should be found props passed", () => {
@@ -38,7 +36,7 @@ describe.concurrent("Test withSearchParams", () => {
         setSearchParams: expect.any(Function),
         dummyProps: dummyPropsValue,
       },
-      expect.anything()
+      expect.anything(),
     );
   });
 });

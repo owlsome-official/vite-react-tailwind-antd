@@ -1,7 +1,7 @@
 import { render } from "utils/test/utils";
 import { withNavigate } from "./withNavigate";
 
-vi.mock("react-router-dom");
+vi.mock("react-router");
 
 describe("Test withNavigate", () => {
   test("should be wrap-able", () => {
@@ -13,7 +13,7 @@ describe("Test withNavigate", () => {
     expect(mockComponent).toHaveBeenCalled();
     expect(mockComponent).toHaveBeenCalledWith(
       { navigate: undefined }, // cause mock router
-      expect.anything()
+      expect.anything(),
     );
   });
   test("should be found props passed", () => {
@@ -26,7 +26,7 @@ describe("Test withNavigate", () => {
     expect(mockComponent).toHaveBeenCalled();
     expect(mockComponent).toHaveBeenCalledWith(
       { navigate: undefined, dummyProps: dummyPropsValue }, // cause mock router
-      expect.anything()
+      expect.anything(),
     );
   });
 });
