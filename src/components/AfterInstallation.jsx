@@ -6,14 +6,14 @@ import { version } from "../../package.json";
 
 const AfterInstallation = () => {
   return (
-    <div className="w-full bg-gradient-to-l from-[#fff] to-[#fff] p-1.5">
+    <div className="w-full bg-linear-to-l from-[#fff] to-[#fff] p-1.5">
       <div className="relative p-8">
         <div className="mb-4 flex flex-col justify-between sm:flex-row">
-          <div className="bg-gradient-to-l from-[#964F4C] to-[#964F4C] bg-clip-text text-h3 font-bold text-transparent">
+          <div className="bg-linear-to-l from-[#964F4C] to-[#964F4C] bg-clip-text text-h3 font-bold text-transparent">
             After Installation
           </div>
           <div className="flex flex-col items-end gap-0.5 text-small">
-            <div className="text-neutral flex gap-1 rounded-full bg-gradient-to-r from-[#CA848A] to-[#FFBE98] px-4 py-0.5">
+            <div className="text-neutral flex gap-1 rounded-full bg-linear-to-r from-[#CA848A] to-[#FFBE98] px-4 py-0.5">
               <img src={ViteIcon} width="16px" alt="vite-icon" />
               <img src={ReactIcon} width="16px" alt="react-icon" />
               <strong>Template v{version}</strong>
@@ -30,7 +30,7 @@ const AfterInstallation = () => {
             </sup>
           </div>
         </div>
-        <div className="mx-auto mb-4 w-full max-w-xs rounded-xl bg-gradient-to-r from-[#CA848A] to-[#FFBE98] p-1.5 text-center shadow-lg">
+        <div className="mx-auto mb-4 w-full max-w-xs rounded-xl bg-linear-to-r from-[#CA848A] to-[#FFBE98] p-1.5 text-center shadow-lg">
           <div className="flex flex-col items-center">
             <img src={LogoImage} alt="logo" className="w-[30vw] max-w-40" />
             <div className="bg-neutral w-full rounded-lg p-1">
