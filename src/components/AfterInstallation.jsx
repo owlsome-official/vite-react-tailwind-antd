@@ -20,7 +20,7 @@ const AfterInstallation = () => {
             </div>
             <sup className="flex items-center gap-2 text-right font-bold">
               <a
-                href="https://www.pantone.com/color-of-the-year/2024"
+                href="https://www.pantone.com/color-of-the-year/2025"
                 target="_blank"
                 className="flex items-center gap-1"
               >
