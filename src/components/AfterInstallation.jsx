@@ -9,14 +9,14 @@ const AfterInstallation = () => {
     <div className="w-full bg-linear-to-l from-[#fff] to-[#fff] p-1.5">
       <div className="relative p-8">
         <div className="mb-4 flex flex-col justify-between sm:flex-row">
-          <div className="bg-linear-to-l from-[#964F4C] to-[#964F4C] bg-clip-text text-h3 font-bold text-transparent">
+          <div className="text-h3 bg-linear-to-l from-[#9E7A68] to-[#9E7A68] bg-clip-text font-bold text-transparent">
             After Installation
           </div>
-          <div className="flex flex-col items-end gap-0.5 text-small">
-            <div className="text-neutral flex gap-1 rounded-full bg-linear-to-r from-[#CA848A] to-[#FFBE98] px-4 py-0.5">
+          <div className="text-small flex flex-col items-end gap-2.5">
+            <div className="text-neutral flex gap-1 rounded-full bg-linear-to-r from-[#9E7A68] to-[#9E7A68] px-4 py-0.5">
               <img src={ViteIcon} width="16px" alt="vite-icon" />
               <img src={ReactIcon} width="16px" alt="react-icon" />
-              <strong>Template v{version}</strong>
+              <strong className="text-white">Template v{version}</strong>
             </div>
             <sup className="flex items-center gap-2 text-right font-bold">
               <a
@@ -24,13 +24,13 @@ const AfterInstallation = () => {
                 target="_blank"
                 className="flex items-center gap-1"
               >
-                <div className="h-2 w-2 bg-[#FFBE98]" />
-                Pantone Color of the Year 2024 - Peach Fuzz
+                <div className="h-2 w-2 bg-[#9E7A68]" />
+                Pantone Color of the Year 2025 - Mocca Mousse
               </a>
             </sup>
           </div>
         </div>
-        <div className="mx-auto mb-4 w-full max-w-xs rounded-xl bg-linear-to-r from-[#CA848A] to-[#FFBE98] p-1.5 text-center shadow-lg">
+        <div className="mx-auto mb-4 w-full max-w-xs rounded-xl bg-linear-to-r from-[#9E7A68]/50 to-[#9E7A68] p-1.5 text-center shadow-lg">
           <div className="flex flex-col items-center">
             <img src={LogoImage} alt="logo" className="w-[30vw] max-w-40" />
             <div className="bg-neutral w-full rounded-lg p-1">
@@ -45,7 +45,7 @@ const AfterInstallation = () => {
         <div className="py-4">
           <strong>
             You have to edit text by name below this{" "}
-            <span className="text-[#964F4C]">
+            <span className="text-[#9E7A68]">
               (Spoiled Alert!, use "Find All and Replace")
             </span>
           </strong>
@@ -59,7 +59,7 @@ const AfterInstallation = () => {
             <li>REPLACE_WITH_YOUR_DOCKER_REGISTRY</li>
           </ul>
         </div>
-        <div className="text-small leading-tight text-[#964F4C]">
+        <div className="text-small leading-tight text-[#9E7A68]">
           Note: REPLACE_WITH_YOUR_SONARQUBE_IP_AND_PORT should be like
           "sub.host.com:9000" or "172.1.2.3:9000"
         </div>

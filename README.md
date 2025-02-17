@@ -11,6 +11,7 @@ The Vite template with react plugin and tools for scaffolding your project
   - [📝 Table of Contents](#-table-of-contents)
   - [📦 Template contains](#-template-contains)
   - [📝 Versions (Last 2 Minor Version)](#-versions-last-2-minor-version)
+    - [v0.5.0 - `2025-02-17`](#v050---2025-02-17)
     - [v0.4.9 - `2024-11-19`](#v049---2024-11-19)
     - [v0.4.8 - `2024-09-20`](#v048---2024-09-20)
     - [v0.4.7 - `2024-09-20`](#v047---2024-09-20)
@@ -21,21 +22,29 @@ The Vite template with react plugin and tools for scaffolding your project
     - [v0.4.2 - `2024-04-17`](#v042---2024-04-17)
     - [v0.4.1 - `2024-02-21`](#v041---2024-02-21)
     - [v0.4.0 - `2023-12-26`](#v040---2023-12-26)
-    - [v0.3.0 - `2023-06-16`](#v030---2023-06-16)
     - [Version History](#version-history)
   - [📌 Get Started](#-get-started)
     - [Want some more ?](#want-some-more-)
 
 ## 📦 Template contains
 
-- [x] React 18
+- [x] React 19
 - [x] Vite with Vitest
-- [x] TailwindCSS (Class name tools)
-- [x] Ant Design v5 (Styled Component)
+- [x] TailwindCSS v4
+- [x] Ant Design v5
+- [x] React Router v7
 - [x] Containerized with Docker (`nginx-alpine` image)
 - [x] CI/CD supported (`Jenkins` & `SonarQube`)
 
 ## 📝 Versions (Last 2 Minor Version)
+
+### v0.5.0 - `2025-02-17`
+
+- On-boarding to `React 19`
+- Updated `tailwindcss 4`
+- Updated dependencies
+- Migrated to new `react-router v7`
+- Updated [Pantone Color of the year 2025](https://www.pantone.com/color-of-the-year/2025)
 
 ### v0.4.9 - `2024-11-19`
 
@@ -83,12 +92,6 @@ The Vite template with react plugin and tools for scaffolding your project
 - Update free content `storage.js`, a closure utility, access web storage api or cookie with a single command
 - Update free content `sonar-project.properties` for supporting SonarQube after initialized
 - Code Refactored
-
-### v0.3.0 - `2023-06-16`
-
-- Added vitest for testing tool
-- Updated "All-in-one" files and structures
-- Updated dependencies
 
 ### Version History
 

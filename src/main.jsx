@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         locale={thTH}
         theme={{
           token: {
-            colorPrimary: "#FFBE98",
+            colorPrimary: "#9E7A68",
             colorTextBase: "#522a28",
             colorLink: "#964F4C",
             wireframe: true,

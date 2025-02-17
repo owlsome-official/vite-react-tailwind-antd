@@ -2,6 +2,14 @@
 
 ## Version History
 
+### [v0.5.0] - `2025-02-17`
+
+- On-boarding to `React 19`
+- Updated `tailwindcss 4`
+- Updated dependencies
+- Migrated to new `react-router v7`
+- Updated [Pantone Color of the year 2025](https://www.pantone.com/color-of-the-year/2025)
+
 ### [v0.4.9] - `2024-11-19`
 
 - Updated dependencies
@@ -69,6 +77,7 @@
 
 - First time ever, it contains a lot of dir/files but it was needed.
 
+[v0.5.0]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.5.0
 [v0.4.9]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.4.9
 [v0.4.8]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.4.8
 [v0.4.7]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.4.7

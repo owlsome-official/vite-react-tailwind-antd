@@ -19,7 +19,7 @@ describe.concurrent("Test withSearchParams", () => {
         searchParams: expect.any(String),
         setSearchParams: expect.any(Function),
       },
-      expect.anything(),
+      undefined,
     );
   });
   test("should be found props passed", () => {
@@ -36,7 +36,7 @@ describe.concurrent("Test withSearchParams", () => {
         setSearchParams: expect.any(Function),
         dummyProps: dummyPropsValue,
       },
-      expect.anything(),
+      undefined,
     );
   });
 });

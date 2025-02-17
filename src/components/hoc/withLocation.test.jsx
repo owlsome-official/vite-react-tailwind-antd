@@ -14,7 +14,7 @@ describe.concurrent("Test withLocation", () => {
     expect(mockComponent).toHaveBeenCalled();
     expect(mockComponent).toHaveBeenCalledWith(
       { location: undefined }, // cause mock router
-      expect.anything(),
+      undefined,
     );
   });
   test("should be found props passed", () => {
@@ -27,7 +27,7 @@ describe.concurrent("Test withLocation", () => {
     expect(mockComponent).toHaveBeenCalled();
     expect(mockComponent).toHaveBeenCalledWith(
       { location: undefined, dummyProps: dummyPropsValue }, // cause mock router
-      expect.anything(),
+      undefined,
     );
   });
 });
