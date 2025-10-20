@@ -10,18 +10,8 @@ The Vite template with react plugin and tools for scaffolding your project
   - [📘 About](#-about)
   - [📝 Table of Contents](#-table-of-contents)
   - [📦 Template contains](#-template-contains)
-  - [📝 Versions (Last 2 Minor Version)](#-versions-last-2-minor-version)
-    - [v0.5.0 - `2025-02-17`](#v050---2025-02-17)
-    - [v0.4.9 - `2024-11-19`](#v049---2024-11-19)
-    - [v0.4.8 - `2024-09-20`](#v048---2024-09-20)
-    - [v0.4.7 - `2024-09-20`](#v047---2024-09-20)
-    - [v0.4.6 - `2024-08-27`](#v046---2024-08-27)
-    - [v0.4.5 - `2024-08-15`](#v045---2024-08-15)
-    - [v0.4.4 - `2024-06-25`](#v044---2024-06-25)
-    - [v0.4.3 - `2024-04-23`](#v043---2024-04-23)
-    - [v0.4.2 - `2024-04-17`](#v042---2024-04-17)
-    - [v0.4.1 - `2024-02-21`](#v041---2024-02-21)
-    - [v0.4.0 - `2023-12-26`](#v040---2023-12-26)
+  - [📝 Versions (Latest Version)](#-versions-latest-version)
+    - [v0.6.0 - `2025-10-20`](#v060---2025-10-20)
     - [Version History](#version-history)
   - [📌 Get Started](#-get-started)
     - [Want some more ?](#want-some-more-)
@@ -36,62 +26,12 @@ The Vite template with react plugin and tools for scaffolding your project
 - [x] Containerized with Docker (`nginx-alpine` image)
 - [x] CI/CD supported (`Jenkins` & `SonarQube`)
 
-## 📝 Versions (Last 2 Minor Version)
+## 📝 Versions (Latest Version)
 
-### v0.5.0 - `2025-02-17`
+### v0.6.0 - `2025-10-20`
 
 - On-boarding to `React 19`
-- Updated `tailwindcss 4`
 - Updated dependencies
-- Migrated to new `react-router v7`
-- Updated [Pantone Color of the year 2025](https://www.pantone.com/color-of-the-year/2025)
-
-### v0.4.9 - `2024-11-19`
-
-- Updated dependencies
-
-### v0.4.8 - `2024-09-20`
-
-- Fixed known vulnerabilities
-
-### v0.4.7 - `2024-09-20`
-
-- Fixed known vulnerabilities
-- Updated dependencies
-
-### v0.4.6 - `2024-08-27`
-
-- Updated nginx image versions
-
-### v0.4.5 - `2024-08-15`
-
-- Updated dependencies
-
-### v0.4.4 - `2024-06-25`
-
-- Updated dependencies
-- Fixed securities issues/PRs
-
-### v0.4.3 - `2024-04-23`
-
-- Updated dependencies
-
-### v0.4.2 - `2024-04-17`
-
-- Updated dependencies
-
-### v0.4.1 - `2024-02-21`
-
-- Fixed fail tests
-- Updated dependencies
-
-### v0.4.0 - `2023-12-26`
-
-- Updated [Pantone Color of the year 2024](https://www.pantone.com/color-of-the-year/2024)
-- Updated dependencies
-- Update free content `storage.js`, a closure utility, access web storage api or cookie with a single command
-- Update free content `sonar-project.properties` for supporting SonarQube after initialized
-- Code Refactored
 
 ### Version History
 

@@ -2,6 +2,10 @@
 
 ## Version History
 
+### [v0.6.0] - `2025-10-20`
+
+- Updated dependencies
+
 ### [v0.5.0] - `2025-02-17`
 
 - On-boarding to `React 19`
@@ -77,6 +81,7 @@
 
 - First time ever, it contains a lot of dir/files but it was needed.
 
+[v0.6.0]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.6.0
 [v0.5.0]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.5.0
 [v0.4.9]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.4.9
 [v0.4.8]: https://github.com/buildingwatsize/vite-react-tailwind-antd/releases/tag/v0.4.8
