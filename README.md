@@ -11,7 +11,7 @@ The Vite template with react plugin and tools for scaffolding your project
   - [📝 Table of Contents](#-table-of-contents)
   - [📦 Template contains](#-template-contains)
   - [📝 Versions (Latest Version)](#-versions-latest-version)
-    - [v0.7.1 - `2026-07-14`](#v071---2026-07-14)
+    - [v0.7.2 - `2026-10-06`](#v072---2026-10-06)
     - [Version History](#version-history)
   - [📌 Get Started](#-get-started)
     - [Want some more ?](#want-some-more-)
@@ -28,12 +28,13 @@ The Vite template with react plugin and tools for scaffolding your project
 
 ## 📝 Versions (Latest Version)
 
-### v0.7.1 - `2026-07-14`
+### v0.7.2 - `2026-10-06`
 
-- Upgraded `vite` to v8 (major)
-- Upgraded `@vitejs/plugin-react` to v6 (major)
-- Upgraded `react-router` to v8 (major)
-- Upgraded `jsdom` to v29 (major)
+- Upgraded `vitest` to v5 (major)
+- Upgraded `@vitest/coverage-v8` to v5 (major)
+- Upgraded `@testing-library/jest-dom` to v7 (major)
+- Upgraded `jsdom` to v30 (major)
+- Migrated `__dirname` to `import.meta.dirname` in vite config
 - Updated dependencies
 
 ### Version History
